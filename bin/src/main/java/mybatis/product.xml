@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product.model.Product">
+	<insert id="GetInsertProduct">
+		insert into product(pnum, pbest, pname, pcolor, psize, pprice, ppoint, pimage, pimage1, pimage2, pimage3, pdate) 
+		values(pseq.nextval,#{pbest},#{pname},#{pcolor},#{psize},#{pprice},#{ppoint},#{pimage},#{pimage1},#{pimage2},#{pimage3},sysdate)
+	</insert>
+	<select id="getTotalCount"  resultType="int">
+		select count(*) from product
+		 <if test="whatColumn=='pname'">
+			where pname like #{keyword}
+		</if>
+		
+		<if test="whatColumn=='pbest'">
+			where pbest like #{keyword}
+		</if>
+		<if test="whatColumn=='pdate'">
+			where pdate like #{keyword}
+		</if> 
+	</select>
+	
+	<select id="getSelectProduct" resultType="MyProduct">
+		select * from product
+		 <if test="whatColumn=='pname'">
+			where pname like #{keyword}
+		</if>
+		
+		<if test="whatColumn=='pbest'">
+			where pbest like #{keyword}
+		</if>
+		<if test="whatColumn=='pdate'">
+			where pdate like #{keyword}
+		</if>
+		order by pnum desc
+	</select>
+</mapper>

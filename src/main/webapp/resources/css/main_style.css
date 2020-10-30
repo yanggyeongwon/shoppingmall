@@ -1,0 +1,148 @@
+
+/* font-family: 'Nanum Myeongjo', serif; 한글*/
+/* font-family: 'Raleway', sans-serif; 영어*/
+/* font-family: 'Inconsolata', monospace; 타이틀 영어 */
+body   {width: 100%;height: 100%;background-color: aliceblue;}
+section{position: relative; overflow: hidden;}
+article{position: fixed;bottom: 2%;right: 2%;z-index: 9999;}
+button {background: 0;border: 0;padding: 0;cursor: pointer}
+
+#admin-page{position:absolute; top:0; left:0; z-index:9999; padding:5px}
+
+.totop_arrow1{width:50px; height:50px; position:relative; background:#25211e; border-radius:50%;text-indent:-9999px;}
+.totop_arrow1:before,.totop_arrow1:after{
+  content:'';
+  width:18px;
+  height:4px;
+  position:absolute;
+  top:48%;
+  border-radius:5px;
+  background:#fff
+}
+.imgoveflow{position:relative; overflow:hidden;height: 640px;}
+.totop_arrow1:before{left:21px;transform:translateY(-50%) rotate(45deg)}
+.totop_arrow1:after{right:21px;transform:translateY(-50%) rotate(-45deg)}
+.menu{
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(to bottom,#25211e 0,rgba(37,33,30,0) 100%);
+  background: -webkit-linear-gradient(top,#25211e 0,rgba(37,33,30,0) 100%);
+  transition: all .2s ease-out;z-index: 5;
+}
+.menu_color{background: #25211e;}
+
+#logo    {width: 100%;margin: 10px 0;}
+#logo a img{width:20%}
+
+.join       { position: absolute;right: 5%; top: 50px;z-index: 999;}
+.join a{position:relative}
+.join a:hover:before{content:'';position:absolute;bottom:-5px;background-color:#fff; width:100%; height:2px;}
+
+
+.join span  {margin: 0 10px;color: #fff;font-family: 'Raleway', sans-serif;}
+
+#mypage span{font-size: 0.5rem;position: absolute;top: -20px;left: 38%;}
+#basket span{font-size: 0.5rem;position: absolute; top: -20px; left: 34%;}
+
+#ul_id      {width: 100%; padding: 20px 0;}
+#ul_id li   {width:15%;display: inline-block;cursor: pointer;font-family: 'Raleway', sans-serif;}
+#ul_id a{padding:20px 100px}
+#ul_id li:hover a{color:#25211e; font-weight:bold;animation: a_hover 1s forwards;}
+@keyframes a_hover{
+    0%{}
+    100%{background-color:aliceblue}
+}
+
+#main_image{width: 100%; height: 850px;position: relative;overflow: hidden;}
+#images    {position:absolute; top: 0%;left: 0; width: 100%;height: 100%;}
+#images img{width: 100%;position: absolute; top: -50px;}
+
+
+
+
+#main2_image  {width:100%;}
+.area1, .area2{width: 100%;margin-top: 100px;}
+.product_items{width: 100%;display: flex;flex-wrap: wrap;justify-content: center;position:relative;}
+.product_title{text-align: center;padding: 0;font-family: 'Inconsolata', monospace;font-size: 3rem;position: relative;}
+.product_title:before{
+  content: '';
+  width: 500px;
+  height: 2px;
+  background-color: #000;
+  color: #000;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 15%;
+}
+.product_title::after{
+  content: '';
+  width: 500px;
+  height: 2px;
+  background-color: #000;
+  color: #000;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 15%;
+}
+.images_show{
+  width: 300px;
+  height: 300px;
+  background-color: #25211e;
+  margin: 30px;
+  transition: 1s all;
+  transform-origin: bottom;
+  position:relative;
+  overflow:hidden
+}
+.bottom_product{width: 500px;
+  background-color: aliceblue;
+  float:left;
+  margin: 20px 50px;
+  cursor: pointer;
+}
+.bottom_product img{width: 100%;}
+.bottom_product p  {font-family: 'Nanum Myeongjo', serif;margin-top: 20px;}
+
+
+#dest_category{color:#ff0000;font-family: 'Raleway', sans-serif;}
+.images_show a{
+  display:block;
+  position:absolute;top:0%;
+  left:0%;
+  font-size:2rem;
+  background-color:black;
+  width:100%;
+  height:100%;
+  color:#fff;
+  text-align: center;
+  padding-top: 45%;
+  opacity:0.4;
+  cursor:pointer
+}
+.images_show img{width:100%}
+.images_block   {display:block}
+.images_scale   {transform: scale(1.1); }
+
+.nav-up{top: -100px;}
+
+footer    {width: 100%;background-color: aliceblue;font-family: 'Nanum Myeongjo', serif;font-size: 0.8rem;margin-top:50px; height: 200px;}
+footer li {margin: 0 5px;display: inline;}
+footer b  {font-weight: bold;}
+
+#footer_img {text-align:center;}
+#footer_img img{width:15%}
+#footer_text{width: 100%;height: 100%;margin-top: 50px;}
+
+.text1   {width: 40%;margin-left:80px; float: left;}
+.text1 ul{margin-top: 20px;}
+.text2   {width: 40%;float: left;margin-left: 250px;}
+
+#footer_top   { margin-top:50px}
+#footer_top a {color:black;font-weight:bold}
+
+.right    {width: 40%;float: left;}
+.right li {display: inherit; margin-top: 15px;}
+.right li:nth-of-type(1){margin-bottom: 30px;font-size: 1rem;}

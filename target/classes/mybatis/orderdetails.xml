@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderdetails.model.Orderdetails">
+	<parameterMap type= "orderdetails.model.Orderdetails" id="orderdetails">
+	
+	</parameterMap>
+
+	<select id="getSelectOrder" resultType="MyOrderdetails">
+		select * from orderdetails
+	</select>
+	
+	<insert id="getInsertOrderdetails">
+		insert into orderdetails(onum,opname,oid,oname,oprename,oppricesum,opcharge) 
+		values(odseq.nextval,#{opname},#{oid},#{oname},#{oprename},#{oppricesum},#{opcharge})
+	</insert>
+	
+	<select id="getTotalCount" parameterType="map"  resultType="int">
+		select count(*) 
+		from orderdetails
+		<if test="state==1">
+		where state=1
+		</if>
+		<if test="state==2">
+		where state=2
+		</if>
+		<if test="state==3">
+		where state=3
+		</if>
+		<if test="state==4">
+		where state=4
+		</if>	
+	</select>
+
+	
+	<update id="updatedelevery" parameterMap="orderdetails">
+		update orderdetails 
+		set state = #{state}
+		where onum = #{onum}
+	</update>
+	
+	<select id="getSelectdelivery" parameterType="map" resultType="MyOrderdetails">
+		select * 
+		from orderdetails 
+		<if test="state==1">
+		where state=1
+		</if>
+		<if test="state==2">
+		where state=2
+		</if>
+		<if test="state==3">
+		where state=3
+		</if>
+		<if test="state==4">
+		where state=4
+		AND opdate &lt; sysdate - 3
+		</if> 	
+	</select>
+	
+	<select id="delivery" resultType="int">
+		select count(*) from orderdetails where state = 2
+	</select>
+	
+	<select id="delivery2" resultType="int">
+		select count(*) from orderdetails where state = 3
+	</select>
+	
+	<select id="delivery3" resultType="int">
+		select count(*) from orderdetails where state = 4
+	</select>
+	
+	
+</mapper>

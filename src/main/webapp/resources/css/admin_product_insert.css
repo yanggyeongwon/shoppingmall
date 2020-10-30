@@ -1,0 +1,44 @@
+
+#left-side, #right-side {float:left;}
+#left-side li			{margin:30px 10px;}
+
+#right-side				{width: 50%;margin-left:10%}
+#right-side input		{height:25px}
+
+.flex-box				{display:flex; justify-content:space-around}
+
+.margin-box25{margin:25px 0 0 0;}
+.margin-box10{margin:10px 0 0 0;}
+.margin-box15{margin:15px 0 0 0;}
+.margin-box20{margin:20px 0 0 0;}
+
+#p_title	{ font-size: 1.5rem; position: relative; margin: 20px 0 0 50px;}
+#p_btn_margin	{ margin-left : 25px;}
+
+#first_box	{border:1px solid #000;padding:50px 30px; height: 935px; width: 80%; float: left; box-sizing: border-box; position: relative;}
+#second_box { height : 800px; width : 85%; margin: 0 auto; margin-top: 5%;}
+
+#left_box, #right_box{ height : 600px; width : 50%; float: left; position: relative;}
+
+.top_box	{ height : 600px; width : 90%; float: left; position: relative; margin: 0 auto; margin-left: 5%; margin-top: 5%;}
+.input_box	{ width : 90%; float: left; margin-left: 5%; margin-top: 5%;}
+
+#input_img_btn	{ position: relative;}
+#input_p_btn	{ display: flex; margin-top: 40px; margin-left: 50px; position: relative;}
+
+#image_view		{ height : 40%; width : 100%; margin: 0 auto; margin-top:10px; text-align: center; position:relative; overflow:hidden;}
+#text_box		{padding : 25px 5px; width : 90%; float: left; position: relative; margin: 0 auto; margin-left: 5%; margin-top: 5%;}
+
+#cate			{font-family: 'Raleway', sans-serif;font-size:0.7em;}
+
+#image_sun_view	{ width: 80%; height: 50px;margin: 0 auto; margin-top: 10px; display: flex; justify-content: space-between;}
+#image_sun_view img{padding:5px ; border:1px solid #2e2e2e}
+
+#thumbnailImgs,#thumbnailImgs1,#thumbnailImgs2,#thumbnailImgs3{float:left}
+
+.ch_red{background-color:red;}
+.ch_blu{background-color:blue}
+.ch_yeo{background-color:yellow}
+.ch_gre{background-color:green}
+.ch_whi{background-color:gray}
+.ch_bla{background-color:black}

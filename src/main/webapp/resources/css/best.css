@@ -1,0 +1,10 @@
+
+
+#filter{height:20px;margin:30px 0 0 100px;position:absolute;top: -10%; left: 9.5%; z-index:5;font-family: 'Nanum Gothic Coding', monospace; font-size: 0.8rem;cursor: pointer;}
+.area2{margin-top:200px}
+.product_title{margin-bottom:50px}
+.product_list_btn_hover{padding: 5px 10px; font-size: 0.9rem; background: url(../images/plus.svg) no-repeat;background-size: 11px;background-position: center right;}
+.active{background: url(../images/minus.svg) no-repeat;background-size: 11px;background-position: center right;}
+#product_list_btn{display: none; background-color:rgba(255, 255, 255, 0.479);padding: 5px 10px;}
+#product_list_btn li{margin: 10px 0;color: #000;font-family: 'Nanum Gothic Coding', monospace;}
+#product_list_btn a{color: #000;}

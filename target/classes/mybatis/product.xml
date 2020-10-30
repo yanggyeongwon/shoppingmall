@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="product.model.Product">
+	<insert id="GetInsertProduct">
+		insert into 
+		<if test="pbest==0"><!--  0번은 의류베스트 -->
+			product(pnum, pbest, pname, pcolor, psize, pprice, ppoint, pimage, pimage1, pimage2, pimage3, pcount ,pdate) 
+			values(pseq.nextval,#{pbest},#{pname},#{pcolor},#{psize},#{pprice},#{ppoint},#{pimage},#{pimage1},#{pimage2},#{pimage3},#{pcount},sysdate)
+		</if>
+		<if test="pbest==2 or pbest==3 or pbest==4"><!--  2번 3번 4번은 의류 -->
+			product(pnum, pbest, pname, pcolor, psize, pprice, ppoint, pimage, pimage1, pimage2, pimage3, pcount ,pdate) 
+			values(pseq.nextval,#{pbest},#{pname},#{pcolor},#{psize},#{pprice},#{ppoint},#{pimage},#{pimage1},#{pimage2},#{pimage3},#{pcount},sysdate)
+		</if>
+		<if test="pbest==5 or pbest==1"><!--  1번 5번은 신발 또는 신발베스트 -->
+			product(pnum, pbest, pname, pcolor, pssize, pprice, ppoint, pimage, pimage1, pimage2, pimage3, pcount ,pdate) 
+			values(pseq.nextval,#{pbest},#{pname},#{pcolor},#{pssize},#{pprice},#{ppoint},#{pimage},#{pimage1},#{pimage2},#{pimage3},#{pcount},sysdate)
+		</if>
+		<if test="pbest==6"><!-- 6번은 acc-->
+			product(pnum, pbest, pname, pcolor, pprice, ppoint, pimage, pimage1, pimage2, pimage3, pcount ,pdate) 
+			values(pseq.nextval,#{pbest},#{pname},#{pcolor},#{pprice},#{ppoint},#{pimage},#{pimage1},#{pimage2},#{pimage3},#{pcount},sysdate)
+		</if>
+	</insert>
+	<select id="getTotalCount"  resultType="int">
+		select count(*) from product
+		 <if test="whatColumn=='pname'">
+			where pname like #{keyword}
+		</if>
+		
+		<if test="whatColumn=='pbest'">
+			where pbest like #{keyword}
+		</if>
+		<if test="whatColumn=='pdate'">
+			where pdate like #{keyword}
+		</if> 
+	</select>
+	
+	<select id="getSelectProduct" resultType="MyProduct">
+		select * from product
+		 <if test="whatColumn=='pname'">
+			where pname like #{keyword}
+		</if>
+		
+		<if test="whatColumn=='pbest'">
+			where pbest like #{keyword}
+		</if>
+		<if test="whatColumn=='pdate'">
+			where pdate like #{keyword}
+		</if>
+		order by pnum desc
+	</select>
+	<select id="getData" resultType="MyProduct">
+		select * from product where pnum = #{pnum}
+	</select>
+	<delete id="deleteProduct">
+		delete product where pnum = #{pnum}
+	</delete>
+	<update id="updateProduct">
+		update product set pimage=#{pimage}, pimage1=#{pimage1}, pimage2=#{pimage2}, pimage3=#{pimage3}, pname=#{pname}, pbest=#{pbest}, pcolor=#{pcolor}, psize=#{psize}, pssize=#{pssize}, pprice=#{pprice}, ppoint=#{ppoint}, pcount=#{pcount} where pnum=#{pnum}
+	</update>
+	<select id="selectMain" resultType="MyProduct">
+		select * from product where pbest = 1 or pbest = 0 order by pnum desc
+	</select>
+	<select id="selectTop" resultType="MyProduct">
+		select * from product where pbest = 2 order by pnum desc
+	</select>
+	<select id="selectPants" resultType="MyProduct">
+		select * from product where pbest = 3 order by pnum desc
+	</select>
+	<select id="selectOuter" resultType="MyProduct">
+		select * from product where pbest = 4 order by pnum desc
+	</select>
+	<select id="selectShose" resultType="MyProduct">
+		select * from product where pbest = 5 order by pnum desc
+	</select>
+	<select id="selectAcc" resultType="MyProduct">
+		select * from product where pbest = 6 order by pnum desc
+	</select>
+</mapper>

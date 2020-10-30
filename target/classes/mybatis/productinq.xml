@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="productinq.model.Productinq">
+
+	<insert id="inqInsert">
+		insert into productinq values(piseq.nextval, #{pienquiry},#{piwriter},sysdate,#{pinum})
+	</insert>
+	<select id="inqselect" resultType="MyProductinq">
+		select * from productinq where numnum = #{pinum}
+	</select>
+	<update id="inqUpdate">
+		update productinq set pienquiry = #{pienquiry} where numnum = #{pinum}
+	</update>
+
+</mapper>

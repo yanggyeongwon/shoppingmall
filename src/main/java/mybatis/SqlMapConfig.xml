@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting value="true" name="mapUnderscoreToCamelCase"/>
+	</settings>
+	<typeAliases>
+		<typeAlias type="member.model.Member" alias="MyMember"/>
+		<typeAlias type="notice.model.Notice" alias="MyNotice"/>
+		<typeAlias type="orderdetails.model.Orderdetails" alias="MyOrderdetails"/>
+		<typeAlias type="product.model.Product" alias="MyProduct"/>
+		<typeAlias type="productinq.model.Productinq" alias="MyProductinq"/>
+		<typeAlias type="board.model.BoardBean" alias="MyBoard" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/member.xml"/>
+		<mapper resource="mybatis/notice.xml"/>
+		<mapper resource="mybatis/orderdetails.xml"/>
+		<mapper resource="mybatis/productinq.xml"/>
+		<mapper resource="mybatis/product.xml"/>
+		<mapper resource="mybatis/board.xml"/>
+	</mappers>
+</configuration>
+
+
