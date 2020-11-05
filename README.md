@@ -1,4 +1,7 @@
 # shoppingmall
+ALTER SESSION SET "_ORACLE_SCRIPT"=true; 
 
 oracle id/pw : jspid/jsppw
 
+CREATE USER JSPID IDENTIFIED BY JSPPW;
+GRANT CONNECT, DBA, RESOURCE TO JSPID;
